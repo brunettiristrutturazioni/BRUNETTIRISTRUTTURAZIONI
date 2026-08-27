@@ -1,0 +1,65 @@
+/* Dettagli grafici del marchio: linee sottili, verdi e arancioni. */
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; width: 190px; height: 190px; right: 40%; top: -135px; border: 2px solid var(--accent); border-radius: 50%; opacity: .85; }
+.hero::after { content: ''; position: absolute; width: 128px; height: 128px; right: 32%; bottom: -94px; border: 2px solid #74bd44; border-radius: 50%; opacity: .9; }
+.hero-copy, .hero-visual { position: relative; z-index: 1; }
+
+.services { position: relative; }
+.services::before { content: ''; position: absolute; left: 0; top: 94px; width: 10vw; max-width: 135px; height: 3px; background: var(--accent); }
+.services::after { content: ''; position: absolute; right: 0; bottom: 84px; width: 16vw; max-width: 220px; height: 3px; background: #74bd44; }
+
+.method-section { position: relative; overflow: hidden; }
+.method-section::before { content: ''; position: absolute; width: 390px; height: 390px; right: -275px; top: -205px; border: 2px solid var(--accent); border-radius: 50%; opacity: .55; }
+.method-copy, .steps { position: relative; z-index: 1; }
+
+.work .section-heading::after { content: ''; display: block; width: 80px; height: 3px; margin: 0 0 8px 24px; background: #74bd44; }
+
+.contact-section { position: relative; overflow: hidden; }
+.contact-section::before, .contact-section::after { content: ''; position: absolute; border: 2px solid rgba(255,255,255,.6); border-radius: 50%; }
+.contact-section::before { width: 150px; height: 150px; left: -72px; bottom: -80px; }
+.contact-section::after { width: 76px; height: 76px; right: 12%; top: 28px; border-color: var(--ink); }
+.contact-section > * { position: relative; z-index: 1; }
+
+@media (max-width: 760px) {
+  .hero::before { right: -70px; top: -112px; }
+  .hero::after { right: 12px; bottom: -88px; }
+  .services::before { top: 45px; width: 52px; }
+  .services::after { bottom: 42px; width: 82px; }
+  .work .section-heading::after { margin: 21px 0 0; }
+}
+
+/* Fotografie selezionate dal portfolio Brunetti Ristrutturazioni. */
+.hero-visual {
+  background-image: linear-gradient(135deg, rgba(34, 85, 54, .08), rgba(34, 85, 54, .32)), url('images/hero-ristrutturazione.jpeg') !important;
+}
+.project-one { background-image: url('images/cucina-illuminazione.jpeg') !important; }
+.project-two { background-image: url('images/bagno-verde.jpeg') !important; }
+.project-three { background-image: url('images/bagno-marmo.jpeg') !important; }
+
+.service-list-supplies { grid-template-columns: repeat(4, 1fr); }
+.service-list-supplies article { margin-right: 22px; padding-right: 24px; }
+
+.portfolio-more { max-width: 1340px; margin: 0 auto; padding: 0 4.6vw 135px; }
+.portfolio-more-heading { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 46px; }
+.portfolio-more-heading h2 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 4.2vw, 58px); font-weight: 600; letter-spacing: -.045em; line-height: .98; margin: 0; }
+.portfolio-more-heading h2 em { color: var(--accent); }
+.more-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.more-card { min-height: 370px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; color: #fff; background: var(--ink); }
+.more-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(.62); }
+.more-card span, .more-card p { position: relative; z-index: 1; }
+.more-card span { font-size: 14px; font-weight: 700; }
+.more-card p { margin: 7px 0 0; font-size: 12px; line-height: 1.45; }
+
+@media (max-width: 960px) {
+  .service-list-supplies { grid-template-columns: repeat(2, 1fr); }
+  .service-list-supplies article:nth-child(2) { border-right: 0; margin-right: 0; padding-right: 0; }
+  .more-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .service-list-supplies article { margin-right: 0; padding-right: 0; }
+  .portfolio-more { padding: 0 7vw 78px; }
+  .portfolio-more-heading { display: block; margin-bottom: 34px; }
+  .more-grid { grid-template-columns: 1fr; }
+  .more-card { min-height: 290px; }
+}
